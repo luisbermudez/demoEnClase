@@ -5,9 +5,21 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-      // unique: true -> Ideally, should be unique, but its up to you
+      unique: true,
+      required: true,
     },
-    password: String,
+    password: {
+      String,
+      required: [true, "Debes colocar username"]
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    profile_pic: {
+      type: String,
+      default: "https://avatars.githubusercontent.com/u/29002976?v=4"
+    }
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
